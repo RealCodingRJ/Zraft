@@ -2,9 +2,14 @@ import BasicMaths.MathFunctions
 import BasicMaths.MathOperators.SelectedOperators
 import Hex.Hex
 import ListedWords.WordsList
+import PrintStringtoConsole.Println
+import welcomeScreenAndAdminScreen.mainScreenUsersSee
 import java.util.Scanner
 
 fun main() {
+
+    mainScreenUsersSee.getWelcomeScreen("Welcome to Zraft CLI")
+    Println().print(" ");
 
     val scan =  Scanner(System.`in`);
     println("Enter Commands: ");
@@ -88,14 +93,17 @@ fun main() {
         val words = WordsList.Words();
         val Word = WordsList.randomWordSelected(words);
 
+        Println().print("Word: ${words[0]}");
+        Println().print("Word: ${words[1]}");
+
         val inputWords = scan.nextLine();
 
         if (inputWords == Word) {
 
-
+            val print = Println();
+            print.print("Correct The Word was: $Word");
 
         }
-
     }
 
 }
