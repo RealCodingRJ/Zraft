@@ -1,41 +1,70 @@
 import BasicMaths.MathFunctions
 import BasicMaths.MathOperators.SelectedOperators
+import java.util.Scanner
 
 fun main() {
 
-    println("Enter Commands: ")
-    val input = readln();
+    val scan =  Scanner(System.`in`);
+    println("Enter Commands: ");
 
-    if (input.contains("/cmd", ignoreCase = true)) {
+    val command = scan.nextLine();
 
-        val cmd = ListCommands();
-        cmd.listCommands();
+    if (command == "/Math") {
 
-    }
+        println("Enter Type: ")
+        val type = scan.nextLine();
 
-    else if (input.contains("/Math", ignoreCase = true)) {
+        if (type == "Basic") {
+            val operator = SelectedOperators.Operator()
 
-        val nums1: Int = BasicMaths.BasicsMath.Basic(1, 10);
-        val nums2: Int = BasicMaths.BasicsMath.Basic(1, 5);
 
-        val operator = SelectedOperators.Operator();
+            val number_1 = BasicMaths.BasicsMath.Basic(1, 10);
+            val number_2 = BasicMaths.BasicsMath.Basic(1,5);
 
-        println("Selected Operator: $operator")
+            println("Operator: $operator")
 
-        if (operator.equals("+")) {
+            if (operator.contains("+")) {
+                println("What is: $number_1 + $number_2")
 
-            println("What is: $nums1 + $nums2")
+                val answer = readln().toInt();
 
-            val input: Int = readln().toInt();
+                if (answer == MathFunctions.Add(number_1, number_2)) {
+                    println("Correct")
+                }
+            }
 
-            if (input == MathFunctions.Add(nums1, nums2)) {
-                println("Correct");
+            if (operator.contains("-")) {
+                println("What is: $number_1 - $number_2")
 
-            } else if (input != MathFunctions.Add(nums1, nums2)) {
-                println("Incorrect Answer was: ${MathFunctions.Add(nums1, nums2)}");
+                val answer = readln().toInt();
+
+                if (answer == MathFunctions.Sub(number_1, number_2)) {
+                    println("Correct")
+                }
+            }
+
+            if (operator.contains("*")) {
+                println("What is: $number_1 * $number_2")
+
+                val answer = readln().toInt();
+
+                if (answer == MathFunctions.Mul(number_1, number_2)) {
+                    println("Correct")
+                }
+            }
+
+            if (operator.contains("/")) {
+                println("What is: $number_1 / $number_2")
+
+                val answer = readln().toInt();
+
+                if (answer == MathFunctions.Div(number_1, number_2)) {
+                    println("Correct")
+                }
             }
 
         }
+
+
     }
 }
-

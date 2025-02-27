@@ -8,7 +8,7 @@ public class BasicsMath {
 
     public static int Basic(int n1, int n2) {
 
-        return m.ints(n1, n2).sum();
+        return m.nextInt(n1, n2);
     }
 
 
