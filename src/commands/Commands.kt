@@ -1,4 +1,6 @@
-﻿class ListCommands {
+﻿package commands
+
+class ListCommands {
     fun listCommands() {
 
         val listCommand = arrayListOf<String>();

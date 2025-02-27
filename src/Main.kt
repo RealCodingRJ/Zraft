@@ -1,6 +1,7 @@
 import BasicMaths.MathFunctions
 import BasicMaths.MathOperators.SelectedOperators
 import Hex.Hex
+import ListedWords.WordsList
 import java.util.Scanner
 
 fun main() {
@@ -82,6 +83,18 @@ fun main() {
         println("[G]: $numG")
         println("[B]: $numB")
 
+
+    }else if (command.equals("/Words")) {
+        val words = WordsList.Words();
+        val Word = WordsList.randomWordSelected(words);
+
+        val inputWords = scan.nextLine();
+
+        if (inputWords == Word) {
+
+
+
+        }
 
     }
 
