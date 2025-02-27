@@ -1,5 +1,6 @@
 import BasicMaths.MathFunctions
 import BasicMaths.MathOperators.SelectedOperators
+import Hex.Hex
 import java.util.Scanner
 
 fun main() {
@@ -65,6 +66,23 @@ fun main() {
 
         }
 
+    }
+
+    else if (command == "/Hex"){
+        println("Enter R Number: ");
+        val numR = scan.nextInt();
+        println("Enter G Number: ");
+        val numG = scan.nextInt();
+        println("Enter R Number: ");
+        val numB = scan.nextInt();
+
+        println("Hex Color Code is: #${Hex.HexCode(numR) + Hex.HexCode(numG) + Hex.HexCode(numB)}");
+
+        println("[R]: $numR")
+        println("[G]: $numG")
+        println("[B]: $numB")
+
 
     }
+
 }
